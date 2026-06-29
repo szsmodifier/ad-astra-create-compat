@@ -138,6 +138,11 @@ repositories {
         name = "Create Mod Maven"
         url = "https://maven.createmod.net"
     }
+
+    maven {
+        name = "Registrate Mirror"
+        url = "https://maven.ithundxr.dev/mirror"
+    }
 }
 
 dependencies {
@@ -168,6 +173,11 @@ dependencies {
     runtimeOnly fg.deobf("com.teamresourceful.resourcefulconfig:resourcefulconfig-forge-1.20.1:2.1.0")
     runtimeOnly fg.deobf("com.teamresourceful.resourcefullib:resourcefullib-forge-1.20.1:2.1.29")
     runtimeOnly fg.deobf("earth.terrarium.botarium:botarium-forge-1.20.1:2.3.4")
+    implementation(fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false })
+    implementation(fg.deobf("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}"))
+    compileOnly(fg.deobf("dev.engine-room.flywheel:flywheel-forge-api-${minecraft_version}:${flywheel_version}"))
+    runtimeOnly(fg.deobf("dev.engine-room.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}"))
+    implementation(fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}"))
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
